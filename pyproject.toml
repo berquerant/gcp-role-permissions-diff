@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gcp-role-permissions-diff"
+description = "Compare the permissions of multiple roles in Google Cloud"
+
+readme = "README.md"
+version = "0.1.0"
+requires-python = ">=3.13"
+license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Developers"
+]
+keywords = ["gcp_role_permissions_diff"]
+dependencies = [
+  "lark==1.2.2",
+  "pyyaml==6.0.2",
+]
+
+[project.urls]
+repository = "https://github.com/berquerant/gcp-role-permissions-diff"
+
+[tool.setuptools.packages.find]
+exclude = ["build", "tests"]
+
+[project.scripts]
+gcp_role_permissions_diff = "gcp_role_permissions_diff.cli:main"
+
+[tool.ruff]
+exclude = [
+  ".direnv",
+  ".eggs",
+  ".git",
+  ".git-rewrite",
+  ".mypy_cache",
+  ".pytype",
+  ".ruff_cache",
+  ".tox",
+  "__pypackages__",
+  "_build",
+  "build",
+  "dist",
+  ".ropeproject",
+  ".pytest_cache",
+  "__pycache__",
+  ".coverage",
+]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+  "F", # pyflakes
+  "I", # isort
+  "E", # pycodestyle
+  "D", # pydocstyle
+  "W", # pycodestyle
+]
+ignore = [
+  "D100",  # Missing docstring in public module
+  "D101",  # Missing docstring in public class
+  "D102",  # Missing docstring in public method
+  "D107",  # Missing docstring in __init__
+  "D203",  # 1 blank line required before class docstring
+  "D212",  # Multi-line docstring summary should start at the first line
+  "I001",  # Import block is un-sorted or un-formatted
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+  "F401",  # Module imported but unused
+]
+"**/{tests,doc}/*" = ["D"]
+
+[tool.mypy]
+ignore_missing_imports = true
+show_error_context = true
+show_column_numbers = true
+pretty = true
+
+[tool.black]
+line-length = 120
