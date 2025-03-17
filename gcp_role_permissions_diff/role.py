@@ -91,7 +91,7 @@ def __read_role_from_json(role_file: str) -> Role:
 
 
 def __read_role_from_text(role_file: str) -> Role:
-    pattern = re.compile("^[0-9a-zA-Z/_.]+$")
+    pattern = re.compile(r"^\S+$")
     with open(role_file) as f:
         permissions = []
         for linum, line in enumerate(f, 1):
