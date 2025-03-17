@@ -30,7 +30,7 @@ class TestE2E(TestCase):
             [
                 "pip",
                 "install",
-                "dist/gcp_role_permissions_diff-0.1.0.tar.gz",
+                "dist/gcp_role_permissions_diff-0.1.1.tar.gz",
             ],
             pwd,
         )
