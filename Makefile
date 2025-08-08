@@ -1,14 +1,18 @@
 .PHONY: init
 init:
-	@pipenv install --dev
+	@uv sync --dev
 
 .PHONY: ci
 ci:
-	@pipenv run ci
+	@uv run tox -m ci
 
-.PHONY: vuln
-vuln:
-	@pipenv check
+.PHONY: check
+check:
+	@uv run tox -m checkm
+
+.PHONY: dist
+dist:
+	uv run python setup.py sdist
 
 .PHONY: clean
 clean:

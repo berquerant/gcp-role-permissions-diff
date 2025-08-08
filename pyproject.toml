@@ -1,33 +1,50 @@
-[build-system]
-requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "gcp-role-permissions-diff"
-description = "Compare the permissions of multiple roles in Google Cloud"
-
-readme = "README.md"
 version = "0.1.1"
+description = "Compare the permissions of multiple roles in Google Cloud"
 requires-python = ">=3.13"
+readme = "README.md"
 license = { file = "LICENSE" }
+keywords = ["gcp_role_permissions_diff"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Intended Audience :: Developers"
+    "Intended Audience :: Developers",
 ]
-keywords = ["gcp_role_permissions_diff"]
 dependencies = [
-  "lark==1.2.2",
-  "pyyaml==6.0.2",
+    "lark==1.2.2",
+    "pyyaml==6.0.2",
 ]
 
 [project.urls]
 repository = "https://github.com/berquerant/gcp-role-permissions-diff"
 
-[tool.setuptools.packages.find]
-exclude = ["build", "tests"]
-
 [project.scripts]
 gcp_role_permissions_diff = "gcp_role_permissions_diff.cli:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "setuptools",
+    "pytest",
+    "black",
+    "tox",
+    "mypy",
+    "ruff",
+    "types-pyyaml",
+]
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
+
+[tool.setuptools.packages.find]
+exclude = ["build", "tests"]
 
 [tool.ruff]
 exclude = [
