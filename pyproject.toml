@@ -11,7 +11,7 @@ classifiers = [
     "Intended Audience :: Developers",
 ]
 dependencies = [
-    "lark==1.2.2",
+    "lark==1.3.0",
     "pyyaml==6.0.3",
 ]
 
