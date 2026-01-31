@@ -6,10 +6,6 @@ init:
 ci:
 	@uv run tox -m ci
 
-.PHONY: check
-check:
-	@uv run tox -m checkm
-
 .PHONY: dist
 dist:
 	uv run python setup.py sdist
