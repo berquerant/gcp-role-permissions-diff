@@ -38,8 +38,7 @@ class TestRole(TestCase):
             (
                 "yaml",
                 "role.yaml",
-                textwrap.dedent(
-                    """\
+                textwrap.dedent("""\
                     description: Allows accessing the payload of secrets.
                     etag: AA==
                     includedPermissions:
@@ -49,8 +48,7 @@ class TestRole(TestCase):
                     name: roles/secretmanager.secretAccessor
                     stage: GA
                     title: Secret Manager Secret Accessor
-                    """
-                ),
+                    """),
                 role.Role(
                     name="roles/secretmanager.secretAccessor",
                     includedPermissions=[

@@ -1,7 +1,6 @@
 import logging
 from typing import cast
 
-
 __debug: bool = False
 __logger: None | logging.Logger = None
 
