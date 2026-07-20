@@ -22,7 +22,7 @@ repository = "https://github.com/berquerant/gcp-role-permissions-diff"
 gcp_role_permissions_diff = "gcp_role_permissions_diff.cli:main"
 
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=83.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [dependency-groups]
